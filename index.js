@@ -110,10 +110,15 @@ function YillaraGoreKazananlar(fifaData, Finaller, years, winners) {
 	
 */
 
-function OrtalamaGolSayisi(fifaData) {
-	
+function OrtalamaGolSayisi(Finaller) {
+	let toplamGol = 0;
+	for (let i = 0; i < Finaller.length; i++) {
+		toplamGol +=
+		Finaller[i]['Home Team Goals'] + Finaller[i]['Away Team Goals'];
+	}
+	return(toplamGol / Finaller.length).toFixed(2);
 }
-
+	console.log(OrtalamaGolSayisi(Finaller(fifaData)));
 
 
 /// EKSTRA ÇALIŞMALAR ///
@@ -124,7 +129,7 @@ function OrtalamaGolSayisi(fifaData) {
 	İpucu: "takım kısaltmaları" (team initials) için datada araştırma yapın!
 İpucu: `.reduce` Kullanın*/
 
-function UlkelerinKazanmaSayilari(/* kodlar buraya */) {
+function UlkelerinKazanmaSayilari(data, takımKısaltmaları) {
 	
     /* kodlar buraya */
 	
@@ -135,9 +140,8 @@ function UlkelerinKazanmaSayilari(/* kodlar buraya */) {
 /*  BONUS 2:  
 EnCokGolAtan() isminde bir fonksiyon yazın, `data` yı parametre olarak alsın ve Dünya kupası finallerinde en çok gol atan takımı döndürsün */
 
-function EnCokGolAtan(/* kodlar buraya */) {
+function EnCokGolAtan(fifaData) {
 	
-    /* kodlar buraya */
 	
 }
 
